@@ -10,19 +10,12 @@
 
 <script>
 export default {
-  data: () => ({
+  props: {
     event: {
-      id: 1,
-      title: 'Park Cleanup',
-      date: 'Tues Aug 19, 2018',
-      time: '17:00',
-      attendees: [
-        { id: 1, name: 'Test' },
-        { id: 2, name: 'Test 2' },
-        { id: 3, name: 'Test 3' },
-      ],
+      type: Object,
+      default: () => ({}),
     },
-  }),
+  },
 };
 </script>
 

@@ -10,6 +10,11 @@ Topics include Vue CLI, Vue Router, Single File Components, and API calls.
 npm install
 ```
 
+### Mock database
+```
+npx json-server --watch db.json 
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
