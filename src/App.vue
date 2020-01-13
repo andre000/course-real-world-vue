@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link :to="{ name: 'event-list' }">Events</router-link> |
-      <router-link :to="{ name: 'event-show' }">Show #1</router-link> |
-      <router-link :to="{ name: 'event-create' }">Create</router-link>
-    </div>
+    <nav-bar />
     <router-view/>
   </div>
 </template>
+
+<script>
+import NavBar from '@/components/NavBar.vue';
+
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
 
 <style lang="scss">
 @import 'src/assets/theme.scss';
 
 #app {
-    color: #2c3e50;
+  color: #2c3e50;
 }
 </style>
