@@ -1,4 +1,9 @@
-# real-world-vue
+# Real World Vue.js
+
+Course page: https://www.vuemastery.com/courses/real-world-vue-js/
+
+Past the basics, we’ll show you more techniques that are needed to ship Vue applications. 
+Topics include Vue CLI, Vue Router, Single File Components, and API calls.
 
 ## Project setup
 ```
