@@ -9,9 +9,10 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/event/1',
+    path: '/event/:id',
     name: 'event-show',
     component: EventShow,
+    props: true,
   },
   {
     path: '/event/create',
@@ -26,6 +27,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 
