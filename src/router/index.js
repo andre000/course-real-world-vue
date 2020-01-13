@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import Error404 from '../views/404.vue';
 import EventCreate from '../views/EventCreate.vue';
 import EventList from '../views/EventList.vue';
 import EventShow from '../views/EventShow.vue';
@@ -23,6 +24,10 @@ const routes = [
     path: '/',
     name: 'event-list',
     component: EventList,
+  },
+  {
+    path: '*',
+    component: Error404,
   },
 ];
 
