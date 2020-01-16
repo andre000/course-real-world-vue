@@ -63,22 +63,14 @@ export default {
         });
     },
 
-    fetchCurrentEvent({ commit, getters, dispatch }, id) {
+    fetchCurrentEvent({ commit, getters }, id) {
       const event = getters.getEventByID(id);
       if (event) {
         return commit('SET_CURRENT_EVENT', event);
       }
 
       return EventService.getEvent(id)
-        .then(({ data }) => { commit('SET_CURRENT_EVENT', data); })
-        .catch((err) => {
-          const notification = {
-            type: 'error',
-            message: `There was a problem fetching event #${id}: ${err.message}`,
-          };
-
-          dispatch('notification/add', notification, { root: true });
-        });
+        .then(({ data }) => { commit('SET_CURRENT_EVENT', data); });
     },
   },
 

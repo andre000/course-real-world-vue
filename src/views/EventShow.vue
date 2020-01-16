@@ -1,5 +1,5 @@
 <template>
-  <div :key="`event-${event.id}`">
+  <article :key="`event-${event.id}`">
     <div class="event-header">
       <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
       <h1 class="title">{{ event.title }}</h1>
@@ -18,7 +18,7 @@
         <b>{{ attendee.name }}</b>
       </li>
     </ul>
-  </div>
+  </article>
 </template>
 
 <script>

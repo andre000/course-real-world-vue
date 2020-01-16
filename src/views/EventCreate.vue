@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <article>
     <h1>Create Event</h1>
 
     <form @submit.prevent="createEvent">
@@ -34,7 +34,7 @@
       </div>
       <input type="submit" class="button -fill-gradient" value="Submit"/>
     </form>
-  </div>
+  </article>
 </template>
 
 <script>
