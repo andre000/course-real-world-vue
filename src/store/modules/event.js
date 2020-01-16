@@ -48,8 +48,8 @@ export default {
       });
     },
 
-    fetchEvents({ commit, dispatch, state }, { limit }) {
-      return EventService.getEvents(state.perPage, limit)
+    fetchEvents({ commit, dispatch, state }, { page }) {
+      return EventService.getEvents(page, state.perPage)
         .then(({ data, headers }) => {
           commit('SET_EVENTS', data);
           commit('SET_TOTAL_OF_EVENTS', headers['x-total-count']);

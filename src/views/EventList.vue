@@ -1,6 +1,6 @@
 
 <template>
-  <article>
+  <article :key="page">
     <h1>Event for {{ user.name }}</h1>
 
     <div class="event-list">

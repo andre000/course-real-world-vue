@@ -3,7 +3,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Nprogress from 'nprogress';
 
-import Error404 from '@/views/404.vue';
 import EventCreate from '@/views/EventCreate.vue';
 import EventList from '@/views/EventList.vue';
 import EventShow from '@/views/EventShow.vue';
@@ -35,8 +34,13 @@ const routes = [
     props: true,
   },
   {
+    path: '/404',
+    name: 'not-found',
+    component: () => import(/* webpackChunkName: "not-found" */ '@/views/404.vue'),
+  },
+  {
     path: '*',
-    component: Error404,
+    redirect: { name: 'not-found' },
   },
 ];
 
