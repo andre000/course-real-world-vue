@@ -22,7 +22,10 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapState } from 'vuex';
+import Nprogress from 'nprogress';
+
+import store from '@/store/index';
 
 export default {
   props: ['id'],
@@ -33,14 +36,14 @@ export default {
     }),
   },
 
-  methods: {
-    ...mapActions('event', [
-      'fetchCurrentEvent',
-    ]),
-  },
-
-  async created() {
-    await this.fetchCurrentEvent(this.id);
+  beforeRouteEnter(to, from, next) {
+    Nprogress.start();
+    store
+      .dispatch('event/fetchCurrentEvent', to.params.id)
+      .then(() => {
+        Nprogress.done();
+        next();
+      });
   },
 };
 </script>
