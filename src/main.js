@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import upperFirst from 'lodash.upperfirst';
 import camelCase from 'lodash.camelcase';
+import 'nprogress/nprogress.css';
 
 import App from './App.vue';
 import router from './router';
