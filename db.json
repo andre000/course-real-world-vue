@@ -44,6 +44,236 @@
       "date": "2019-02-02T23:27:00.000Z",
       "time": "1:00",
       "attendees": []
+    },
+    {
+      "id": 592801,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Cat Cabaret 2",
+      "description": "Yay felines!",
+      "location": "Meow Town",
+      "date": "2019-01-03T21:54:00.000Z",
+      "time": "2:00",
+      "attendees": []
+    },
+    {
+      "id": 841988,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Kitty Cluster 2 ",
+      "description": "Yay cats!",
+      "location": "Catlandia",
+      "date": "2019-01-31T22:09:00.000Z",
+      "time": "7:00",
+      "attendees": []
+    },
+    {
+      "id": 458297,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Puppy Parade 2",
+      "description": "Yay pups!",
+      "location": "Puptown ",
+      "date": "2019-02-02T23:27:00.000Z",
+      "time": "1:00",
+      "attendees": []
+    },
+    {
+      "id": 59201,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Cat Cabaret 3",
+      "description": "Yay felines!",
+      "location": "Meow Town",
+      "date": "2019-01-03T21:54:00.000Z",
+      "time": "2:00",
+      "attendees": []
+    },
+    {
+      "id": 84188,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Kitty Cluster 3",
+      "description": "Yay cats!",
+      "location": "Catlandia",
+      "date": "2019-01-31T22:09:00.000Z",
+      "time": "7:00",
+      "attendees": []
+    },
+    {
+      "id": 45897,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "animal welfare",
+      "organizer": "Adam",
+      "title": "Puppy Parade 3",
+      "description": "Yay pups!",
+      "location": "Puptown ",
+      "date": "2019-02-02T23:27:00.000Z",
+      "time": "1:00",
+      "attendees": []
+    },
+    {
+      "id": 5714194,
+      "category": "sustainability",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "1",
+      "description": "1",
+      "location": "1",
+      "date": "2020-01-08T12:51:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 1943608,
+      "category": "sustainability",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "2",
+      "description": "2",
+      "location": "2",
+      "date": "2020-01-14T12:51:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 7807476,
+      "category": "animal welfare",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "3",
+      "description": "3",
+      "location": "3",
+      "date": "2020-01-17T12:53:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 7548370,
+      "category": "sustainability",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "5",
+      "description": "5",
+      "location": "5",
+      "date": "2020-01-16T13:08:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 8307962,
+      "category": "sustainability",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "6",
+      "description": "6",
+      "location": "6",
+      "date": "2020-01-16T13:10:00.000Z",
+      "time": "19:00",
+      "attendees": []
+    },
+    {
+      "id": 8027817,
+      "category": "nature",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "7",
+      "description": "7",
+      "location": "7",
+      "date": "2020-01-22T13:11:00.000Z",
+      "time": "20:00",
+      "attendees": []
+    },
+    {
+      "id": 7137854,
+      "category": "animal welfare",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "8",
+      "description": "8",
+      "location": "8",
+      "date": "2020-01-23T13:13:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 177480,
+      "category": "sustainability",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "9",
+      "description": "9",
+      "location": "9",
+      "date": "2020-01-23T16:01:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 2759725,
+      "category": "nature",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "10",
+      "description": "01",
+      "location": "10",
+      "date": "2020-01-02T16:07:00.000Z",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 9542449,
+      "category": "education",
+      "organizer": {
+        "id": 1,
+        "name": "Test"
+      },
+      "title": "11",
+      "description": "11",
+      "location": "11",
+      "date": "2020-01-24T16:08:00.000Z",
+      "time": "18:00",
+      "attendees": []
     }
   ]
 }
