@@ -8,6 +8,7 @@ export default {
     events: [],
     currentEvent: {},
     totalOfEvents: 0,
+    perPage: 3,
   },
 
   mutations: {
@@ -47,8 +48,8 @@ export default {
       });
     },
 
-    fetchEvents({ commit, dispatch }, { page, limit }) {
-      return EventService.getEvents(page, limit)
+    fetchEvents({ commit, dispatch, state }, { limit }) {
+      return EventService.getEvents(state.perPage, limit)
         .then(({ data, headers }) => {
           commit('SET_EVENTS', data);
           commit('SET_TOTAL_OF_EVENTS', headers['x-total-count']);
