@@ -1,5 +1,5 @@
 <template>
-  <div :key="`event-${id}`">
+  <div :key="`event-${event.id}`">
     <div class="event-header">
       <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
       <h1 class="title">{{ event.title }}</h1>
@@ -22,28 +22,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import Nprogress from 'nprogress';
-
-import store from '@/store/index';
 
 export default {
-  props: ['id'],
-
-  computed: {
-    ...mapState('event', {
-      event: 'currentEvent',
-    }),
-  },
-
-  beforeRouteEnter(to, from, next) {
-    Nprogress.start();
-    store
-      .dispatch('event/fetchCurrentEvent', to.params.id)
-      .then(() => {
-        Nprogress.done();
-        next();
-      });
+  props: {
+    event: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>
