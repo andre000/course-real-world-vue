@@ -1,9 +1,21 @@
 # Real World Vue.js
 
+Project created though the lessons avaiable on [Vue Mastery](https://www.vuemastery.com)
+
+### Course 1: Real World Vue.js
 Course page: https://www.vuemastery.com/courses/real-world-vue-js/
 
-Past the basics, we’ll show you more techniques that are needed to ship Vue applications. 
-Topics include Vue CLI, Vue Router, Single File Components, and API calls.
+> Past the basics, we’ll show you more techniques that are needed to ship Vue applications. 
+> Topics include Vue CLI, Vue Router, Single File Components, and API calls.
+
+---
+
+### Course 2: Mastering Vuex
+Course page: https://www.vuemastery.com/courses/mastering-vuex/
+
+> Learn how to handle state in a production-level application with Vuex, Vue's own state management pattern and library.
+
+---
 
 ## Project setup
 ```
