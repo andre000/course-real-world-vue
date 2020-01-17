@@ -40,7 +40,10 @@
         :options="times"
       />
 
-      <input type="submit" class="button -fill-gradient" value="Submit"/>
+      <base-button type="submit" style="margin-top: 25px;" button-class="-fill-gradient">
+        Submit
+      </base-button>
+
     </form>
   </article>
 </template>
