@@ -88,9 +88,9 @@
       <base-button
         type="submit"
         style="margin-top: 25px;"
-        :disabled="$v.$anyError"
-        button-class="-fill-gradient">
-        Submit
+        :disabled="$v.$anyError || loading"
+        button-class="-fill-gradient btn-submit-create">
+        {{ loading ? 'Saving...' : 'Submit' }}
       </base-button>
 
     </form>
@@ -127,6 +127,7 @@ export default {
     return {
       event: this.createFreshEvent(),
       times,
+      loading: false,
     };
   },
 
@@ -138,11 +139,13 @@ export default {
     createEvent() {
       this.$v.$touch();
       if (this.$v.$invalid) return;
+      this.loading = true;
 
       Nprogress.start();
       this.$store
         .dispatch('event/createEvent', this.event)
         .then(() => {
+          this.loading = false;
           this.$router.push({
             name: 'event-show',
             params: { id: this.event.id },
@@ -150,6 +153,7 @@ export default {
           this.event = this.createFreshEvent();
         })
         .catch(() => {
+          this.loading = false;
           Nprogress.done();
         });
     },
@@ -172,6 +176,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+  .btn-submit-create {
+    transition: .33s all ease-in-out;
+    &:disabled {
+      color: #777 !important;
+    }
+  }
 </style>

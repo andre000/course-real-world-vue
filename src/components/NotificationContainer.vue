@@ -1,6 +1,8 @@
 <template>
   <div class="notification-container">
-    <notification-bar v-for="n in notifications" :key="n.id" :notification="n" />
+    <transition-group name="notification-list">
+      <notification-bar v-for="n in notifications" :key="n.id" :notification="n" />
+    </transition-group>
   </div>
 </template>
 
@@ -25,5 +27,15 @@ export default {
     bottom: 0;
     right: 0;
     padding-right: 40px;
+  }
+  .notification-list-enter-active,
+  .notification-list-leave-active {
+    transition: all 1s;
+  }
+
+  .notification-list-enter,
+  .notification-list-leave-to{
+    opacity: 0;
+    transform: translateY(30px);
   }
 </style>
