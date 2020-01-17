@@ -225,3 +225,12 @@ html {
   select::ms-expand {
     opacity: 0;
   }
+  .field.error {
+    label {
+      color: $error;
+    }
+    
+    input, select {
+      border: $error 1px solid !important;
+    }
+  }
