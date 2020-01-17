@@ -1,6 +1,6 @@
 @import 'variables.scss';
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap');
 
 html {
     -webkit-text-size-adjust: 100%;
@@ -233,4 +233,9 @@ html {
     input, select {
       border: $error 1px solid !important;
     }
+  }
+  
+  .vdp-datepicker input.error{
+    color: $error;
+    border: $error 1px solid !important;
   }
