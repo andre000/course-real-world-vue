@@ -17,6 +17,13 @@ Course page: https://www.vuemastery.com/courses/mastering-vuex/
 
 ---
 
+### Course 3: Next-Level Vue
+Course page: https://www.vuemastery.com/courses/next-level-vue/
+
+> Learn more advanced real-world practices on routing, component loading, code reuse, and forms.
+
+---
+
 ## Project setup
 ```
 npm install
