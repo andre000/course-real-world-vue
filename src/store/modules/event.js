@@ -8,6 +8,7 @@ export default {
     events: [],
     currentEvent: {},
     totalOfEvents: 0,
+    perPage: 3,
   },
 
   mutations: {
@@ -47,8 +48,8 @@ export default {
       });
     },
 
-    fetchEvents({ commit, dispatch }, { page, limit }) {
-      return EventService.getEvents(page, limit)
+    fetchEvents({ commit, dispatch, state }, { page }) {
+      return EventService.getEvents(page, state.perPage)
         .then(({ data, headers }) => {
           commit('SET_EVENTS', data);
           commit('SET_TOTAL_OF_EVENTS', headers['x-total-count']);
@@ -62,22 +63,14 @@ export default {
         });
     },
 
-    fetchCurrentEvent({ commit, getters, dispatch }, id) {
+    fetchCurrentEvent({ commit, getters }, id) {
       const event = getters.getEventByID(id);
       if (event) {
         return commit('SET_CURRENT_EVENT', event);
       }
 
       return EventService.getEvent(id)
-        .then(({ data }) => { commit('SET_CURRENT_EVENT', data); })
-        .catch((err) => {
-          const notification = {
-            type: 'error',
-            message: `There was a problem fetching event #${id}: ${err.message}`,
-          };
-
-          dispatch('notification/add', notification, { root: true });
-        });
+        .then(({ data }) => { commit('SET_CURRENT_EVENT', data); });
     },
   },
 

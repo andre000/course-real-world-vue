@@ -1,5 +1,6 @@
+
 <template>
-  <article>
+  <article :key="page">
     <h1>Event for {{ user.name }}</h1>
 
     <div class="event-list">
@@ -14,7 +15,7 @@
         Prev
       </router-link>
       <router-link
-        v-if="page < totalOfEvents / 3"
+        v-if="page < totalOfEvents / perPage"
         :to="{name: 'event-list', query: { page: page + 1 }}">
         Next
       </router-link>
@@ -24,20 +25,35 @@
 </template>
 
 <script>
+/* eslint-disable no-param-reassign */
+
 import { mapState, mapActions } from 'vuex';
 import EventCard from '@/components/EventCard.vue';
+import store from '@/store/index';
+
+async function getPageEvents(to, from, next) {
+  const currentPage = ~~to.query.page || 1;
+  await store.dispatch('event/fetchEvents', {
+    page: currentPage,
+  });
+  to.params.page = currentPage;
+  next();
+}
 
 export default {
   components: {
     EventCard,
   },
 
-  computed: {
-    page() {
-      return ~~this.$route.query.page || 1;
+  props: {
+    page: {
+      type: Number,
+      required: true,
     },
+  },
 
-    ...mapState('event', ['events', 'totalOfEvents']),
+  computed: {
+    ...mapState('event', ['events', 'totalOfEvents', 'perPage']),
     ...mapState('user', ['user']),
   },
 
@@ -45,12 +61,9 @@ export default {
     ...mapActions('event', ['fetchEvents']),
   },
 
-  created() {
-    this.fetchEvents({
-      page: this.page,
-      limit: 3,
-    });
-  },
+  beforeRouteEnter: getPageEvents,
+
+  beforeRouteUpdate: getPageEvents,
 };
 </script>
 

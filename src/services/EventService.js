@@ -7,7 +7,20 @@ const apiClient = axios.create({
     Accept: 'application/json',
     'Content-Type': 'application/json',
   },
+  timeout: 10000,
 });
+
+/**
+  INTERCEPTORS EXAMPLE
+  apiClient.interceptors.request.use((config) => {
+    Nprogress.start();
+    return config;
+  });
+  apiClient.interceptors.response.use((response) => {
+    Nprogress.done();
+    return response;
+  });
+ */
 
 export default {
   getEvents(page = 1, limit = 3) {

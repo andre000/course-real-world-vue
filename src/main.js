@@ -1,10 +1,13 @@
 import Vue from 'vue';
 import upperFirst from 'lodash.upperfirst';
 import camelCase from 'lodash.camelcase';
+import Vuelidate from 'vuelidate';
+import 'nprogress/nprogress.css';
 
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import dateFilter from './filters/date';
 
 Vue.config.productionTip = false;
 
@@ -29,6 +32,8 @@ requireComponent.keys().forEach((fileName) => {
   );
 });
 
+Vue.use(Vuelidate);
+Vue.filter('date', dateFilter);
 
 new Vue({
   router,

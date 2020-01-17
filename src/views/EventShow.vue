@@ -1,7 +1,7 @@
 <template>
-  <div :key="`event-${id}`">
+  <article :key="`event-${event.id}`">
     <div class="event-header">
-      <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
+      <span class="eyebrow">@{{ event.time }} on {{ event.date | date }}</span>
       <h1 class="title">{{ event.title }}</h1>
       <h5>Organized by {{ event.organizer ? event.organizer.name : '' }}</h5>
       <h5>Category: {{ event.category }}</h5>
@@ -18,29 +18,17 @@
         <b>{{ attendee.name }}</b>
       </li>
     </ul>
-  </div>
+  </article>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
 
 export default {
-  props: ['id'],
-
-  computed: {
-    ...mapState('event', {
-      event: 'currentEvent',
-    }),
-  },
-
-  methods: {
-    ...mapActions('event', [
-      'fetchCurrentEvent',
-    ]),
-  },
-
-  async created() {
-    await this.fetchCurrentEvent(this.id);
+  props: {
+    event: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>
