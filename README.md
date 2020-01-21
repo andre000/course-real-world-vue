@@ -24,6 +24,13 @@ Course page: https://www.vuemastery.com/courses/next-level-vue/
 
 ---
 
+### Course 4: Animating Vue
+Course page: https://www.vuemastery.com/courses/animating-vue/
+
+> Bring your web interface to life and improve your user experience with Vue animations.
+
+---
+
 ## Project setup
 ```
 npm install
