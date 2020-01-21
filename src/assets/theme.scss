@@ -1,4 +1,5 @@
-@import 'variables.scss';
+@import './variables.scss';
+@import './animations.scss';
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap');
 
@@ -229,12 +230,12 @@ html {
     label {
       color: $error;
     }
-    
+
     input, select {
       border: $error 1px solid !important;
     }
   }
-  
+
   .vdp-datepicker input.error{
     color: $error;
     border: $error 1px solid !important;

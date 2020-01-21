@@ -4,7 +4,14 @@
     <h1>Event for {{ user.name }}</h1>
 
     <div class="event-list">
-      <event-card v-for="event in events" :key="event.id" :event="event" />
+      <transition-group
+        @before-enter="animBeforeEnter"
+        @enter="animEnter"
+        :css="false"
+        mode="out-in"
+        appear>
+        <event-card v-for="event in events" :key="event.id" :event="event" />
+      </transition-group>
     </div>
 
     <div class="pagination">
@@ -28,6 +35,7 @@
 /* eslint-disable no-param-reassign */
 
 import { mapState, mapActions } from 'vuex';
+import GSAP from 'gsap';
 import EventCard from '@/components/EventCard.vue';
 import store from '@/store/index';
 
@@ -58,6 +66,21 @@ export default {
   },
 
   methods: {
+    animBeforeEnter(el) {
+      el.children[0].style.transform = 'translateX(-10px)';
+      el.children[0].style.opacity = 0;
+    },
+    animEnter(el, done) {
+      GSAP.to('.event-card', {
+        x: 0,
+        opacity: 1,
+        delay: 0.333,
+        duration: 0.333,
+        stagger: 0.2,
+        ease: 'back',
+        onComplete: done,
+      });
+    },
     ...mapActions('event', ['fetchEvents']),
   },
 

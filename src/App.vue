@@ -23,30 +23,7 @@ export default {
 <style lang="scss">
 @import 'src/assets/theme.scss';
 
-$max-width: calc(500px - 40px);
-
 #app {
   color: #2c3e50;
 }
-
-.spin-enter, .spin-leave-to {
-  width: $max-width !important;
-  transform: rotateY(-90deg);
-  opacity: 0;
-}
-
-.spin-enter-active {
-  width: $max-width !important;
-  position: absolute;
-  transform-origin: 0% 0%;
-  transition: all .6s ease-in;
-}
-.spin-leave-active {
-  width: $max-width !important;
-  position: absolute;
-  transform-origin: 540px 100%;
-  transition: all .6s ease-out;
-}
-
-
 </style>
